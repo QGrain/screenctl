@@ -26,7 +26,7 @@ class ProgressBar(object):
 
         args = {
             'total': self.total,
-            'bar': bar,remain
+            'bar': bar,
             'current': self.current,
             'percent': percent * 100
         }
