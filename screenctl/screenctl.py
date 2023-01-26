@@ -51,7 +51,7 @@ class ScreenCtl():
     
     def statScreen(self, job):
         d = {}
-        f = os.popen("scrn -ls")
+        f = os.popen("screen -ls")
         ret = f.readlines()
         for line in ret:
             if job in line:
