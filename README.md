@@ -7,7 +7,7 @@ A tool for batch management of Linux Screen.
 ## Installation
 
 ```bash
-# plan to released on pypi thus you can install it via pip
+# plan to release on pypi thus you can install it via pip
 pip install screenctl
 # to be done
 ```
@@ -33,7 +33,9 @@ optional arguments:
 
 - v0.0.1: 2022-11-28 01:50
     - support basic `create`, `delete` and `stat`.
+- v0.0.2: 2023-01-26 19:30
+    - update README and release on [pypi]().
 
-## Opensource
+## Open-Source
 
 Welcome stars and contributions!
