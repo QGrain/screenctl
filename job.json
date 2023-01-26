@@ -2,9 +2,5 @@
     "name1": "echo \"name1\" >> name1.log",
     "name2": "echo 'name2' >> name2.log",
     "name3": "echo 'name3' >> name3.log",
-    "name4": "echo 'name4' >> name4.log",
-    "name5": "echo 'name2' >> name2.log",
-    "name6": "echo 'name2' >> name2.log",
-    "name7": "echo 'name2' >> name2.log",
-    "name8": "echo 'name2' >> name2.log"
+    "name4": "ping -c 100 baidu.com"
 }

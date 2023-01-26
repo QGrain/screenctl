@@ -113,10 +113,12 @@ if __name__ == "__main__":
     parser.add_argument("-c", "--conf", type=str, help='path to configuration')
     parser.add_argument('-v', '--verbose', help='show verbose output', action='store_true')
     args = parser.parse_args()
+
     verbose = args.verbose
     if args.conf:
         conf_path = args.conf
     else:
+        # default configuration path
         conf_path = "./job.json"
 
     screenctl = ScreenCtl(verbose)
@@ -125,7 +127,7 @@ if __name__ == "__main__":
     print("---------------------------------------")
 
     if args.action == "server":
-        print("Run as a web server, todo")
+        print("Run as a web server, todo...")
 
     progress = ProgressBar(len(conf), fmt=ProgressBar.FULL)
 
