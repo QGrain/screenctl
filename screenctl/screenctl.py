@@ -3,6 +3,7 @@ import os, sys
 import json
 import re
 from time import sleep
+from . import NAME, VERSION, DESCRIPTION
 
 
 class ProgressBar(object):
@@ -50,7 +51,7 @@ class ScreenCtl():
     
     def statScreen(self, job):
         d = {}
-        f = os.popen("screen -ls")
+        f = os.popen("scrn -ls")
         ret = f.readlines()
         for line in ret:
             if job in line:
@@ -107,8 +108,8 @@ def print_dict(d):
         print(json.dumps(d, sort_keys=False, indent=4, ensure_ascii=False))
 
 
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Controller for screen")
+def main():
+    parser = argparse.ArgumentParser(description=DESCRIPTION)
     parser.add_argument("action", type=str, help='create, delete, stat, server')
     parser.add_argument("-c", "--conf", type=str, help='path to configuration')
     parser.add_argument('-v', '--verbose', help='show verbose output', action='store_true')
@@ -146,3 +147,6 @@ if __name__ == "__main__":
             if verbose == True:
                 print_dict(d)
     print("Done!")
+
+if __name__ == "__main__":
+    main()

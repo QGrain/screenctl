@@ -1,1 +1,7 @@
 experiments.json
+*.egg
+.eggs
+*.egg-info/
+build/
+dist/
+screenctl/__pycache__/
