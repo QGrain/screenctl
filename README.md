@@ -37,6 +37,8 @@ optional arguments:
     - support basic `create`, `delete` and `stat`.
 - v0.0.2: 2023-01-26 21:20
     - update README and release on [pypi](https://pypi.org/project/screenctl/).
+- v0.0.3: 2023-01-26 21:55
+    - fix a tiny bug and release.  
 
 ## Open-Source
 
