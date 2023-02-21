@@ -43,6 +43,8 @@ optional arguments:
     - update README page. (it requires anothor version even for such a readme-update ...)
 - v0.0.5: 2023-02-21 20:25
     - fix issue [#1](https://github.com/QGrain/screenctl/issues/1) and try to fix [#2](https://github.com/QGrain/screenctl/issues/2) (not verified)
+- v0.0.6: 2023-02-21 21:15
+    - fix a typo bug in line 68 in screenctl.py
 
 ## Open-Source
 

@@ -65,7 +65,7 @@ class ScreenCtl():
                 cmd = ""
                 if job_name == job:
                     if job_name in self.conf:
-                        cmd = self.conf[conf_job_name]
+                        cmd = self.conf[job_name]
                     else:
                         cmd = "cmd not in configuration: %s"%self.conf_path
                     d[name] = {"create":create, "status":status, "cmd":cmd}
