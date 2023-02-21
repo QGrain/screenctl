@@ -39,6 +39,10 @@ optional arguments:
     - update README and release on [pypi](https://pypi.org/project/screenctl/).
 - v0.0.3: 2023-01-26 21:55
     - fix a tiny bug and release.  
+- v0.0.4: 2023-01-26 22:05
+    - update README page. (it requires anothor version even for such a readme-update ...)
+- v0.0.5: 2023-02-21 20:25
+    - fix issue [#1](https://github.com/QGrain/screenctl/issues/1) and try to fix [#2](https://github.com/QGrain/screenctl/issues/2) (not verified)
 
 ## Open-Source
 

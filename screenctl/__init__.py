@@ -1,3 +1,3 @@
 NAME = 'screenctl'
-VERSION = '0.0.3'
+VERSION = '0.0.5'
 DESCRIPTION = "%s %s, Controller for screen"%(NAME, VERSION)

@@ -44,12 +44,13 @@ class ScreenCtl():
         self.verbose = verbose
     
     def readConf(self, conf_path):
+        self.conf_path = conf_path
         with open(conf_path, 'r', encoding='utf-8') as f:
             conf = json.load(f)
         self.conf = conf
         return conf
     
-    def statScreen(self, job):
+    def statScreen(self, job, visual=False):
         d = {}
         f = os.popen("screen -ls")
         ret = f.readlines()
@@ -62,10 +63,14 @@ class ScreenCtl():
 
                 job_name = name.split('.')[-1]
                 cmd = ""
-                for conf_job_name in self.conf:
-                    if job_name == conf_job_name:
+                if job_name == job:
+                    if job_name in self.conf:
                         cmd = self.conf[conf_job_name]
-                d[name] = {"create":create, "status":status, "cmd":cmd}
+                    else:
+                        cmd = "cmd not in configuration: %s"%self.conf_path
+                    d[name] = {"create":create, "status":status, "cmd":cmd}
+        if visual == True:
+            print_dict(d)
         f.close()
         return d
 
@@ -112,6 +117,7 @@ def main():
     parser = argparse.ArgumentParser(description=DESCRIPTION)
     parser.add_argument("action", type=str, help='create, delete, stat, server')
     parser.add_argument("-c", "--conf", type=str, help='path to configuration')
+    parser.add_argument("-i", "--interval", type=float, help='interval of execution')
     parser.add_argument('-v', '--verbose', help='show verbose output', action='store_true')
     args = parser.parse_args()
 
@@ -121,6 +127,11 @@ def main():
     else:
         # default configuration path
         conf_path = "./job.json"
+    
+    if args.interval:
+        interval = args.interval
+    else:
+        interval = 0.6
 
     screenctl = ScreenCtl(verbose)
     conf = screenctl.readConf(conf_path)
@@ -135,7 +146,7 @@ def main():
     for job in conf:
         progress.current += 1
         progress()
-        sleep(0.2)
+        sleep(interval)
         if args.action == "create":
             screenctl.createScreen(job, conf[job])
         elif args.action == "delete":
@@ -143,9 +154,8 @@ def main():
             if verbose == True:
                 print("delete job %s"%job)
         elif args.action == "stat":
-            d = screenctl.statScreen(job)
-            if verbose == True:
-                print_dict(d)
+            screenctl.statScreen(job, True)
+
     print("Done!")
 
 if __name__ == "__main__":
