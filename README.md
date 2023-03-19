@@ -1,5 +1,16 @@
-# screenctl
+<h1 align="center">
+  screenctl
+</h1>
+
+<p align="center">
 A tool for batch management of Linux Screen.
+</p>
+
+<p align="center">
+<img alt="PyPI" src="https://img.shields.io/pypi/v/screenctl">
+<img alt="GitHub" src="https://img.shields.io/github/license/QGrain/screenctl">
+<img alt="Codecov" src="https://img.shields.io/codecov/c/github/QGrain/screenctl?flag=CODECOV_TOKEN&token=9af8a803-b8d8-429b-9ffe-82af063b5dbe">
+</p>
 
 ## Introduction
 **screenctl** is a tool that can create, delete, stat screens in batch through a specified json configuration. A web-based admin page is in planning.
