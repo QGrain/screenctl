@@ -8,6 +8,7 @@ A tool for batch management of Linux Screen.
 
 <p align="center">
 <img alt="PyPI" src="https://img.shields.io/pypi/v/screenctl">
+<img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/screenctl">
 <img alt="GitHub" src="https://img.shields.io/github/license/QGrain/screenctl">
 <img alt="Codecov" src="https://img.shields.io/codecov/c/github/QGrain/screenctl?flag=CODECOV_TOKEN&token=9af8a803-b8d8-429b-9ffe-82af063b5dbe">
 </p>
